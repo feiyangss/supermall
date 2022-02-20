@@ -1,29 +1,26 @@
 <template>
   <div id="app">
-   <h2>我是双城</h2>
+    <router-view></router-view>
+    <main-tab></main-tab>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    components: {
+import MainTab from "components/content/mainTabbar/MainTab.vue";
 
-    },
-    data () {
-      return {
-
-      }
-    },
-    methods: {
-
-    },
-    computed: {
-
-    },
- }
+export default {
+  name: "App",
+  components: {
+    MainTab,
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+  computed: {},
+};
 </script>
 
 <style scoped>
-
+@import "assets/css/base.css";
 </style>
