@@ -32,6 +32,7 @@ export default {
   methods: {
     btnclick(index) {
       this.currentIndex = index;
+      this.$emit('tabClick', index)
     },
   },
   computed: {},

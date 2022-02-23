@@ -1,8 +1,8 @@
 <template>
-  <swiper>
+  <swiper :loaded="loaded">
     <swiper-item v-for="(item, index) in banners" :key='index'>
       <a :href="item.link">
-        <img :src="item.image" alt="" />
+        <img :src="item.image" alt="" @load="imageLoad(banners.length)" />
       </a>
     </swiper-item>
   </swiper>
@@ -27,10 +27,23 @@ export default {
   },
   data() {
     return {
-    
+      isLoad: false,
+      imagecount: 0,
+      loaded: false
     };
   },
-  methods: {},
+  methods: {
+    imageLoad(num) {
+      if (!this.isLoad) {
+         this.$emit('swiperImageLoad')
+         this.isLoad = true
+      };
+      this.imagecount ++
+      if(this.imagecount == num){
+        this.loaded = true;
+      }
+    }
+  },
   computed: {},
   
 };
