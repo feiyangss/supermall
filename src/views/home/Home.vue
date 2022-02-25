@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <nav-bar class="home-nav"><div slot="center">购物车</div></nav-bar>
+    <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
     <tab-control
         :titles="['流行', '新款', '精选']"
         @tabClick="tabClick" ref="tabControl1" 
@@ -155,11 +155,14 @@ export default {
   
   },
   activated() {
-    this.$refs.scroll.scrollTo(0, this.saveY, 0);
+    
     this.$refs.scroll.refresh()
+    this.$refs.scroll.scrollTo(0, this.saveY, 0);
+   
   },
   deactivated() {
-    this.saveY = this.$refs.scroll.getScrollY()
+    this.saveY = this.$refs.scroll.getScrollY();
+    
   }
 };
 </script>

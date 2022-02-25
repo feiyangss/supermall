@@ -5,7 +5,7 @@
       </div>
       <div slot="center" class="title">
         <div v-for="(item, index) in titles" :key="index" 
-        class="title-item" :class="{active: index == currentIndex}" 
+        class="title-item" :class="{active: currentIndex == index}" 
         @click="tutleClick(index)"
         >{{item}}</div>
       </div>
@@ -32,7 +32,7 @@ export default {
      this.$emit('titleClick', index)
     },
     backClick() {
-      this.$router.back()
+      this.$router.go(-1)
     }
   },
   computed: {},
@@ -64,4 +64,5 @@ export default {
   .active {
     color: var(--color-high-text)
   }
+  
 </style>

@@ -58,7 +58,7 @@
 .tabbar-item img{
   width: 24px;
   height: 24px;
-  margin-top: 0px;
+  margin-top: 3px;
   margin-bottom: 1px;
   vertical-align: middle;
 }

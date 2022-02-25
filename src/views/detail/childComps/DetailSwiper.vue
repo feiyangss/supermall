@@ -1,5 +1,5 @@
 <template>
-    <swiper class="detail-swiper" :loaded="loaded">
+    <swiper class="detail-swiper" :loaded="loaded" v-if="Object.keys(topImages).length !== 0">
       <swiper-item class="swiper-item" v-for="(item, index) in topImages" :key="index">
         <img :src="item" alt="" @load="imgLoad(topImages.length)">
       </swiper-item>

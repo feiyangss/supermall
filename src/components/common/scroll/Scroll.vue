@@ -14,11 +14,11 @@ import BScroll from 'better-scroll';
     props: {
       probeType: {
         type: Number,
-        default: 0
+        default: 3
       },
       pullUpLoad: {
         type: Boolean,
-        default: false
+        default: true
       },
     },
     components: {
@@ -50,13 +50,17 @@ import BScroll from 'better-scroll';
       })
     },
     methods: {
+      //  返回到 。。位置
       scrollTo(x, y, time=300) {
+        
        this.scroll && this.scroll.scrollTo(x, y, time)
       },
+
       finishPullUp() {
         this.scroll.finishPullUp()
       },
-      refresh() {
+      // 刷新
+      refresh() {    
        this.scroll && this.scroll.refresh()
       },
       getScrollY() {
